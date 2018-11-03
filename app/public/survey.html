@@ -192,77 +192,82 @@
 
     <script>
 
-        $(".submit").on("click", function (event) {
+        //================================================================================================
+        //Broken, can't figure out how to implement the compatability algorithm.
+        //Pretty much all fell apart here.
+        //================================================================================================
 
-            //function to add up the score of the userData only. probably redundant but this is taking longer than i thought 
-            //so i won't get back in time to clean it up.
-            function addUp(formData) {
-                console.log(formData) 
-                let total = 0;
-                for (i = 0; i < formData.scores.length; i++) {
-                  total =  total += parseInt(formData.scores[i]);
-                } 
+       $(".submit").on("click", function (event) {
 
-                compare(total);
-                     
-            }
+//function to add up the score of the userData only. probably redundant but this is taking longer than i thought 
+//so i won't get back in time to clean it up.
+function addUp(formData) {
+    console.log(formData) 
+    let total = 0;
+    for (i = 0; i < formData.scores.length; i++) {
+      total =  total += parseInt(formData.scores[i]);
+    } 
 
-            //Work in progress, this function grabs the data from the friends.js file and adds up all their totals,
-            //then shoves them all into a new array.
-            function compare(total) {
-                let userScore = total;
-                console.log(userScore);
-                let currentURL = window.location.origin;
-               $.ajax({ url: currentURL + '/api/friends', method: "GET" }).then(function(friendScores){
-                   let friendScoresArray = [];
-                   let absolute = [];                   
-                   for (z = 0; z < friendScores.length; z++) {
-                       let all = 0;
-                       for( x = 0; x < friendScores[z].scores.length; x++) {
-                           all = all += parseInt(friendScores[z].scores[x]);
-                       } friendScoresArray.push(all);
-                   } console.log(friendScoresArray, userScore);
+    compare(total);
+         
+}
+
+//Work in progress, this function grabs the data from the friends.js file and adds up all their totals,
+//then shoves them all into a new array.
+function compare(total) {
+    let userScore = total;
+    console.log(userScore);
+    let currentURL = window.location.origin;
+   $.ajax({ url: currentURL + '/api/friends', method: "GET" }).then(function(friendScores){
+       let friendScoresArray = [];
+       let absolute = [];                   
+       for (z = 0; z < friendScores.length; z++) {
+           let all = 0;
+           for( x = 0; x < friendScores[z].scores.length; x++) {
+               all = all += parseInt(friendScores[z].scores[x]);
+           } friendScoresArray.push(all);
+       } console.log(friendScoresArray, userScore);
 
 
-               });
-            };
-            event.preventDefault();
-            //Grabs the user data from the survey.
-            let modal = document.getElementById('myModal')
-            let userData = {
-                name: $("#name").val(),
-                photo: $("#photo").val(),
-                scores: [
-                    $("#q1").val(),
-                    $("#q2").val(),
-                    $("#q3").val(),
-                    $("#q4").val(),
-                    $("#q5").val(),
-                    $("#q6").val(),
-                    $("#q7").val(),
-                    $("#q8").val(),
-                    $("#q9").val(),
-                    $("#q10").val()
-                ]
-            };
+   });
+};
+event.preventDefault();
+//Grabs the user data from the survey.
+let modal = document.getElementById('myModal')
+let userData = {
+    name: $("#name").val(),
+    photo: $("#photo").val(),
+    scores: [
+        $("#q1").val(),
+        $("#q2").val(),
+        $("#q3").val(),
+        $("#q4").val(),
+        $("#q5").val(),
+        $("#q6").val(),
+        $("#q7").val(),
+        $("#q8").val(),
+        $("#q9").val(),
+        $("#q10").val()
+    ]
+};
 
-            console.log(userData);
-            addUp(userData);
-            
+console.log(userData);
+addUp(userData);
 
-            //adds the info from the user to the database.
-            $.post("/api/friends", userData).then(function (data) {
-                console.log(json.parse(data));
-            });
-            modal.style.display = "block";
-            $('.matchName').text("hi");
-            
-            window.onclick = function (event) {
-                if (event.target == modal) {
-                    modal.style.display = "none";
-                }
-            }
-        });
+
+//adds the info from the user to the database.
+$.post("/api/friends", userData).then(function (data) {
+    console.log(json.parse(data));
+});
+modal.style.display = "block";
+$('.matchName').text("hi");
+
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+});
 
 
 
