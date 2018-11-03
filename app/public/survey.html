@@ -6,17 +6,271 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>home</title>
-    <script src="../../app/data/friends.js"></script>
-    <script src="../../server.js"></script>
-    <script src="../routing/apiRoutes.js"></script>
-    <script src="../routing/htmlRoutes.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
-    <link REL=StyleSheet HREF="../../css/style.css" TYPE="text/css" MEDIA=screen>
+
 </head>
+
 <body>
-   
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container alert-primary">
+            <h1 class="display-4"><span class="glyphicon glyphicon-search"></span> Friend Finder</h1>
+            <p class="lead"></p>
+        </div>
+    </div>
+    <hr>
+
+    <div class="container">
+        <div class="col-lg-6 offset-lg-3"></div>
+        <h1>SURVEY QUESTIONS</h1>
+        <hr>
+        <h2>About You</h2>
+        <h3>Name (required)</h3>
+        <input type='text' id='name' class='form-control' required>
+        <br>
+        <h3>Link to Photo image (required)</h3>
+        <input type='text' id='photo' class='form-control' required>
+        <hr>
+        <br>
+
+
+        <h2>Question 1:</h2>
+        <h3>You are very impulsive.</h3>
+        <select name="q1" id="q1" class="form">
+            <option selected></option>
+            <option value='1'>1 (strongly disagree)</option>
+            <option value='2'>2</option>
+            <option value='3'>3</option>
+            <option value='4'>4</option>
+            <option value='5'>5 (strongly agree)</option>
+        </select>
+
+        <hr>
+
+        <h2>Question 2:</h2>
+        <h3>You watch a lot of anime</h3>
+        <select name="q2" id="q2" class="form">
+            <option selected></option>
+            <option value='1'>1 (strongly disagree)</option>
+            <option value='2'>2</option>
+            <option value='3'>3</option>
+            <option value='4'>4</option>
+            <option value='5'>5 (strongly agree)</option>
+        </select>
+
+        <hr>
+
+        <h2>Question 3:</h2>
+        <h3>Basketball is better than pretty much every other sport.</h3>
+        <select name="q3" id="q3" class="form">
+            <option selected></option>
+            <option value='1'>1 (strongly disagree)</option>
+            <option value='2'>2</option>
+            <option value='3'>3</option>
+            <option value='4'>4</option>
+            <option value='5'>5 (strongly agree)</option>
+        </select>
+
+        <hr>
+
+        <h2>Question 4:</h2>
+        <h3>Dr. Pepper is water.</h3>
+        <select name="q4" id="q4" class="form">
+            <option selected></option>
+            <option value='1'>1 (strongly disagree)</option>
+            <option value='2'>2</option>
+            <option value='3'>3</option>
+            <option value='4'>4</option>
+            <option value='5'>5 (strongly agree)</option>
+        </select>
+
+        <hr>
+
+        <h2>Question 5:</h2>
+        <h3>You watch a lot of anime</h3>
+        <select name="q5" id="q5" class="form">
+            <option selected></option>
+            <option value='1'>1 (strongly agree)</option>
+            <option value='2'>2</option>
+            <option value='3'>3</option>
+            <option value='4'>4</option>
+            <option value='5'>5 (strongly disagree)</option>
+        </select>
+
+        <hr>
+
+        <h2>Question 6:</h2>
+        <h3>You also watch a lot of comedy</h3>
+        <select name="q6" id="q6" class="form">
+            <option selected></option>
+            <option value='1'>1 (strongly agree)</option>
+            <option value='2'>2</option>
+            <option value='3'>3</option>
+            <option value='4'>4</option>
+            <option value='5'>5 (strongly disagree)</option>
+        </select>
+
+        <hr>
+
+        <h2>Question 7:</h2>
+        <h3>But not really a lot of sketch comedy or live comedy.</h3>
+        <select name="q7" id="q7" class="form">
+            <option selected></option>
+            <option value='1'>1 (strongly agree)</option>
+            <option value='2'>2</option>
+            <option value='3'>3</option>
+            <option value='4'>4</option>
+            <option value='5'>5 (strongly disagree)</option>
+        </select>
+
+        <hr>
+
+        <h2>Question 8:</h2>
+        <h3>What is reality Tv.....</h3>
+        <select name="q8" id="q8" class="form">
+            <option selected></option>
+            <option value='1'>1 (strongly disagree)</option>
+            <option value='2'>2</option>
+            <option value='3'>3</option>
+            <option value='4'>4</option>
+            <option value='5'>5 (strongly disagree)</option>
+        </select>
+
+        <hr>
+        <h2>Question 9:</h2>
+        <h3>Yu Yu Hakusho is probably your favorite anime.</h3>
+        <select name="q9" id="q9" class="form">
+            <option selected></option>
+            <option value='1'>1 (strongly disagree)</option>
+            <option value='2'>2</option>
+            <option value='3'>3</option>
+            <option value='4'>4</option>
+            <option value='5'>5 (strongly agree)</option>
+        </select>
+
+        <hr>
+
+        <h2>Question 10:</h2>
+        <h3>Raising Cane's sounds good right about now.</h3>
+        <select name="q10" id="q10" class="form">
+            <option selected></option>
+            <option value='1'>1 (strongly disagree)</option>
+            <option value='2'>2</option>
+            <option value='3'>3</option>
+            <option value='4'>4</option>
+            <option value='5'>5 (strongly agree)</option>
+        </select>
+        <hr>
+        <button type='submit' class='submit btn btn-block btn-lg bg-success mb-5'>Submit to see your results!</button>
+
+    </div>
+
+    <div class="modal" id="myModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Your Best Match!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p class="matchName"></p>
+                    <img src=''>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+
+        $(".submit").on("click", function (event) {
+
+            //function to add up the score of the userData only. probably redundant but this is taking longer than i thought 
+            //so i won't get back in time to clean it up.
+            function addUp(formData) {
+                console.log(formData) 
+                let total = 0;
+                for (i = 0; i < formData.scores.length; i++) {
+                  total =  total += parseInt(formData.scores[i]);
+                } 
+
+                compare(total);
+                     
+            }
+
+            //Work in progress, this function grabs the data from the friends.js file and adds up all their totals,
+            //then shoves them all into a new array.
+            function compare(total) {
+                let userScore = total;
+                console.log(userScore);
+                let currentURL = window.location.origin;
+               $.ajax({ url: currentURL + '/api/friends', method: "GET" }).then(function(friendScores){
+                   let friendScoresArray = [];
+                   let absolute = [];                   
+                   for (z = 0; z < friendScores.length; z++) {
+                       let all = 0;
+                       for( x = 0; x < friendScores[z].scores.length; x++) {
+                           all = all += parseInt(friendScores[z].scores[x]);
+                       } friendScoresArray.push(all);
+                   } console.log(friendScoresArray, userScore);
+
+
+               });
+            };
+            event.preventDefault();
+            //Grabs the user data from the survey.
+            let modal = document.getElementById('myModal')
+            let userData = {
+                name: $("#name").val(),
+                photo: $("#photo").val(),
+                scores: [
+                    $("#q1").val(),
+                    $("#q2").val(),
+                    $("#q3").val(),
+                    $("#q4").val(),
+                    $("#q5").val(),
+                    $("#q6").val(),
+                    $("#q7").val(),
+                    $("#q8").val(),
+                    $("#q9").val(),
+                    $("#q10").val()
+                ]
+            };
+
+            console.log(userData);
+            addUp(userData);
+            
+
+            //adds the info from the user to the database.
+            $.post("/api/friends", userData).then(function (data) {
+                console.log(json.parse(data));
+            });
+            modal.style.display = "block";
+            $('.matchName').text("hi");
+            
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        });
+
+
+
+
+
+    </script>
+
+
 </body>
+
 </html>

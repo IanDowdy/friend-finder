@@ -1,4 +1,6 @@
+//link to friends.js
 let friendData = require('../data/friends');
+
 
 module.exports = function (app) {
     app.get('/api/friends', function (req, res) {
@@ -6,13 +8,8 @@ module.exports = function (app) {
     });
 
     app.post('/api/friends', function (req, res) {
-        if (friendData.length < 10) {
-            friendData.push(req.body);
-            res.json(true);
-        }
-        else {
-            console.log(friendData + "-- friendData reached capacity")
-        }
+        friendData.push(req.body)
+        console.log(friendData)
     });
 
 };
